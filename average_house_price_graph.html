@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<h2>Average House Price Over 20 years Period For All Regions In Uk</h2>
+
+<p>
+The data provided by <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/housepriceindexmonthlyquarterlytables1to19"> ONS</a> had to be manually aggregated in order to provide user with user friendly visual approach. The intial raw data, contain many irrelevant and unnecessary data, plus the partation of the average all dweeling price was split into quatars, which was aggregated to find the average for the whole  year. This will provide user with easier snapshot and readability of the data in a line graph. The cleaned up data could be found in the <a href="https://github.com/Saya32/DVS_DATA/blob/main/updated_data.csv"> github</a>, which was used to read the data in our code. 
+</p>
+
+<p>
+In order to successfully implement the line graph and to provide user with the interactivity, multiple existing d3 visualisation implementation were used to successfully build this graph. One of the key concept to create this graph was to aim for simplicity and accessibility, so the users are not overwhelmed with too many information and is also suitable for <a href=https://www.datylon.com/blog/data-visualization-for-colorblind-readers>colour-blind</a> people. The idea to filter out line graph by Countries and date were take from <a href=https://d3-graph-gallery.com/graph/line_filter.html>D3.js Graph Gallery to use dropdown to filter group </a>, whereas, the mouses used to show the exact value in the line graph is used from <a href=https://d3-graph-gallery.com/graph/line_cursor.html>D3.js Graph Gallery with cursor showing exact value </a>,
+  
+</p>
+
+<!-- Initialize a select button -->
+<select id="selectButton"></select>
+
+<div id="my_dataviz"></div>
+
+<!-- Color Scale -->
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
