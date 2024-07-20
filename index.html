@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Sayaka</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<h2>Average House Price Over 20 years Period For All Regions In Uk</h2>
+
+<p>
+The data provided by <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/housepriceindexmonthlyquarterlytables1to19"> ONS</a> had to be manually aggregated to provide the user with a user-friendly visual approach. The initial raw data contained many irrelevant and unnecessary data, plus the partition of the average "all dwelling price" was split into quarters, which were aggregated to find the average for the whole year. This will provide users with more accessible snapshots and readability of the data in a line graph. The cleaned-up data could be found in the <a href="https://github.com/Saya32/DVS_DATA/blob/main/updated_data.csv"> github</a>, which was used to read the data in our code. 
+
+Therefore, from the table dataset provided, table 11 was used. However, since the quarter 1 data was missing in 1992, therefore that year was omitted, and only data from 1993 to 2023 was used. Data provided for "Great Britain" and combined data for "England and Wales" were also omitted as they served no value in answering Exploratory Research Question 1. Therefore, the average for each year was calculated using the "AVERAGE=()" function provided by Excel for every other country and region we were looking for. You can find the detailed process of cleaning data in this <a href="https://docs.google.com/spreadsheets/d/1WM0ryv8PvtIshVqcnooOwuA3yuYH7mC1/edit?usp=drive_link&ouid=104958396338485689163&rtpof=true&sd=true"> excel</a>. Once The average value for "all dwellings was obtained for each country and regions from 1993 to 2023, the file was converted and committed to Git Hub. That data was used for implementation as shown.
+</p>
+
+<p>
+To successfully implement the line graph and to provide the users with interactivity, multiple existing d3 visualization implementations were used to build this graph successfully. One of the key concepts to creating this graph was to aim for simplicity and accessibility so the users are not overwhelmed with too much information and are also suitable for <a href=https://www.datylon.com/blog/data-visualization-for-colorblind-readers> color-blind </a> people. The idea to filter out line graphs by country and regions was taken from <a href=https://d3-graph-gallery.com/graph/line_filter.html>D3.js Graph Gallery to use the dropdown to filter group </a>, whereas the mouses used to show the exact value in the line graph is used from <a href=https://d3-graph-gallery.com/graph/line_cursor.html>D3.js Graph Gallery with cursor showing exact value </a>,
+  
+</p>
+
+<!-- Initialize a select button -->
+<select id="selectButton" class="selectButton"></select>
+
+<div id="my_dataviz"></div>
+
+<!-- Color Scale -->
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<!-- partial -->
+  <script src='https://d3js.org/d3.v4.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
